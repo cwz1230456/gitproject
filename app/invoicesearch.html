@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="static/styles.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.STYLE1 {font-weight: bold}
+body,td,th {
+	color: #006699;
+}
+.STYLE4 {color: #6495ED}
+-->
+</style><meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style>
+ul
+{
+list-style-type:none;
+margin:0;
+padding:0;
+}
+li
+{
+display:inline;
+}
+.STYLE5 {font-size: 24px}
+</style>
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" />
+	<title>Financial management system</title>
+{% load staticfiles %}
+</head>
+<body>
+<!-- header begin -->
+<div id="logo">
+  <div align="center"><img src="{% static 'logo.png' %}"" alt="logo "width="73" height="60"django.gif" %} />Invoice Search </div>
+</div>
+
+<ul>
+<li><a href="/formsearch/" class="STYLE5" style="color:#009999">form</a></li>
+<li><a href="/salary/" class="STYLE5" style="color:#009999">salary</a></li>
+<li><a href="/tax/" class="STYLE5" style="color:#009999">tax</a></li>
+
+</ul>
+
+	<hr />
+
+
+
+<div class="widget">
+	<form action="/invoice/" method="post">
+		<div class="title STYLE4">
+		  <div align="center"><strong>Search for Invoice Detail</strong></div>
+		</div>
+		<div align="center">
+		  <p>
+		    <input class="text" type="text" name="title" value="input title" onFocus="if(value=='input title') {value=''}" onBlur="if(value=='') {value='input title'}">
+	      </p>
+		  <p>&nbsp;  </p>
+	  </div>
+		<div class="reminder"></div>
+	    <div align="center">
+
+	      <p>
+	        <input name="submit" type="submit" class="submit" value="search">
+          </p>
+	      <p>&nbsp;</p>
+	    </div>
+	</form>
+	
+</div>
+<!-- header end -->
+<div id="content">
+  <table id="peoplelist">
+  <tr>
+	  <th>title</th>
+	  <th>drawer</th>
+	  <th>date</th>
+    </tr>
+    {% for invoice in invoice_list %}    
+    <tr>
+		<td>{{invoice.title}}</td>
+    	<td>{{ invoice.drawer }}</td>
+    	<td>{{ invoice.date }}</td>
+	</tr>
+      {% endfor %}
+  </table>
+
+</div>
+<div id="singlebutton">
+	<div align="left"><a href="/add_invoice/">Add new invoice</a>
+    </div>
+</div>
+<div id="singlebutton">
+		<div align="left"><a href="/main/" class="STYLE1">Return</a> </div>
+</div>
+
+<hr />
+</body>
+</html>

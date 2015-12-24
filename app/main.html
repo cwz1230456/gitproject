@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="static/styles.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.STYLE2 {color: #0066FF}
+-->
+<style> 
+
+.STYLE3 {
+	font-size: 12px;
+	font-weight: bold;
+}
+.STYLE3 {font-size: 36px}
+</style>
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" />
+	<title>Financial management system</title>
+{% load staticfiles %}
+</head>
+<body>
+<!-- header begin -->
+
+
+<div id="logo">
+	
+	<div align="center"><img src="{% static 'logo.png' %}"" alt="logo "width="73 " height="60 "django.gif" %} />Welcome To Financial Management System</div>
+  
+</div>
+
+<div align="right"><a href="/logout/" class="STYLE2" style="color:#009999">logout</a></div>
+<hr />
+
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div id="sidebar">
+	<div class="widget">
+
+	<div id="button">
+  <a href="/invoicesearch/">invoice management</a>	
+  </div>
+
+	
+	<div id="button">
+  <a href="/formsearch/">form management</a>	
+  </div>
+	
+	
+	<div id="button">
+  <a href="/salary/">salary management</a>	
+  </div>
+	 
+	
+	<div id="button">
+  <a href="/tax/">tax conculate</a>	
+  </div>
+	</div>
+	
+</div>
+
+<div id="logo">
+  <div align="center">
+    <p><img src="{% static 'happyness.jpg' %}"" alt="logo "width="493" height="371"django.gif" %} /></p>
+    
+  </div>
+</div>
+
+<hr />
+<!-- sidebar end -->
+</body>
+</html>

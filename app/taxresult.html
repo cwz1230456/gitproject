@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="static/styles.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.STYLE1 {font-size: 18px}
+.STYLE2 {font-size: 18px; color: #66CCFF; }
+-->
+</style>
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" />
+	<title>Financial management system</title> 
+{% load staticfiles %}
+</head>
+<body>
+<!-- header begin -->
+<div id="logo">
+  <div align="center"><img src="{% static 'logo.png' %}"" alt="logo "width="73" height="60"django.gif" %} />Tax Result </div>
+</div>
+<hr />
+<!-- header end -->
+ <p>&nbsp;</p>
+<div id="content">
+<table id="peoplelist">
+	<tr>
+		<th>costing  </th>
+		<th>selling</th>
+		<th>addvalue</th>
+		<th>nation</th>
+		
+	</tr>
+	{% for cost in cost_list %}
+		<td>{{ cost }}</td>
+	{% endfor %}
+	{% for sell in sel_list %}
+	
+		<td>{{ sell }}</td>
+	
+	{% endfor %}
+	{% for add in addv_list %}
+	
+		<td>{{ add }}</td>
+	
+	{% endfor %}
+	{% for nation in nation_list %}
+
+		<td>{{ nation }}</td>
+
+	{% endfor %}
+	
+</table>
+  <p>&nbsp;</p>
+
+
+<div id="singlebutton">
+		<div align="left">
+    	<p align="center" class="STYLE2"  >Lawfully pay taxes is the obligation that every citizen should use up.</p>
+  		</div>
+		<div align="left"><a href="/tax/" class="STYLE1">Return</a> </div>
+</div>
+</div>
+<hr />
+</body>
+</html>

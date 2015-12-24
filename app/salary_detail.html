@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="static/styles.css" rel="stylesheet" type="text/css">
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" />
+	<title>Financial management system</title>
+{% load staticfiles %}
+</head>
+<body>
+<!-- header begin -->
+<div id="logo">
+  <div align="center"><img src="{% static 'logo.png' %}"" alt="logo "width="73" height="60"django.gif" %} />Salary Detail</div>
+</div>
+<hr />
+<p>
+  <!-- header end -->
+  
+  </div>
+</p>
+<p>&nbsp;</p>
+<div id="content">
+
+<table id="peoplelist">
+	<tr>
+		
+		<th>Name  </th>
+		<th>Year  </th>
+		<th>Year Salary</th>
+		<th>Remarks</th>
+		<th>Begining month</th>
+		<th>Ending month</th>
+		<th>total Salary</th>
+		
+	</tr>
+	{% for Salary in salary_list %}
+
+		  <td>{{ Salary.name }}</td>
+		    <td>{{ Salary.year }}</td>
+		<td>{{ Salary.total }}</td>
+		<td>{{ Salary.remarks }}</td>
+	{% for begin in begin_list %}
+
+		<td>{{begin}}</td>
+	
+	{% endfor %}
+	{% for end in end_list %}
+
+		<td>{{end}}</td>
+	
+	{% endfor %}	
+	{% for total in total_list %}
+
+		<td>{{total}}</td>
+	
+	{% endfor %}
+
+	
+		
+	
+		
+	</tr>
+	{% endfor %}
+	
+
+
+
+</table>
+<p>&nbsp;	</p>
+
+<div id="singlebutton">
+		<div align="left"><a href="/salary/" class="STYLE1">Return</a> </div>
+</div>
+</div>
+<hr />
+</body>
+</html>

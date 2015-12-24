@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>add invoice</title>
+		{% load staticfiles %}
+		<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" />
+	</head>
+
+<body>
+	<div id="logo"><img src="{% static 'logo.png' %}" alt="logo" /></a>&nbsp;|&nbsp;&nbsp;add form </div>
+		<form method="post" onSubmit="alert('successful')">
+	<hr />
+			<table id="personform">
+				<tr>
+					<th>&nbsp;</th>
+					<th>add_form</th>
+				</tr>
+				<tr>
+					<td>year </td>
+					<td><input name="year" type="text" class="text"></td>
+				</tr>
+			
+				<tr>
+
+					
+					<td colspan = 2 align="center"><input type="submit" value="save" class="button"><input type="reset" value="reset" class="button"></td>
+				</tr>
+			</table>
+		</form>
+	<div id="singlebutton">
+		<a href="/form/">return</a>
+	</div>
+	<hr />
+</body>
+</html>

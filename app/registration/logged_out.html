@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" />
+<title>log out</title>
+<meta http-equiv="refresh" content="3;url=/"> 
+</head>
+<body>
+<div id="logo"><a href="/"><img src="{% static 'logo.png' %}" alt="logo" width="73" height="60"/></a>&nbsp;|&nbsp;&nbsp;Log out</div>
+<hr />
+ <h1 class="message">log out successful ......return to welcome page in 3s</h1>
+  <div id="userurls">
+  <a href="/login/">log in again</a>
+  <a href="/">welcome page</a>
+  </div>
+  
+</body>
+</html>

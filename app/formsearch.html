@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="static/styles.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.STYLE1 {font-weight: bold}
+body,td,th {
+	color: #006699;
+}
+.STYLE4 {color: #000000}
+-->
+</style><meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style>
+ul
+{
+list-style-type:none;
+margin:0;
+padding:0;
+}
+li
+{
+display:inline;
+}
+.STYLE6 {font-size: 24px}
+.STYLE7 {
+	color: #6495ED;
+	font-weight: bold;
+}
+</style>
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" />
+	<title>Financial management system</title>
+{% load staticfiles %}
+</head>
+<body>
+<!-- header begin -->
+<div id="logo">
+  <div align="center"><img src="{% static 'logo.png' %}"" alt="logo "width="73" height="60"django.gif" %} />Form Search </div>
+</div>
+<ul>
+<li><a href="/invoicesearch/" class="STYLE6" style="color:#009999">invoice</a></li>
+<li><a href="/salary/" class="STYLE6" style="color:#009999">salary</a></li>
+<li><a href="/tax/" class="STYLE6" style="color:#009999">tax</a></li>
+
+</ul>
+	
+	<hr />
+
+
+
+
+<!-- header end -->
+	
+
+
+<div class="widget">
+	<form action="/form/" method="post">
+		<div class="year STYLE4">
+		  <div align="center" class="STYLE7">Search For Form Detail</div>
+		</div>
+		<div align="center">
+		  <p>
+		    <input class="text" type="text" name="year" value="input year" onFocus="if(value=='input year') {value=''}" onBlur="if(value=='') {value='input year'}">
+	      </p>
+		  <p>&nbsp;  </p>
+	  </div>
+		<div class="reminder"></div>
+	    <div align="center">
+	      <input name="submit" type="submit" class="submit" value="search">
+          </div>
+	</form>
+	</div>
+	
+<div id="singlebutton">
+	<div align="left"><a href="/add_form/">Add new form</a>
+    </div>
+</div>
+<div id="singlebutton">
+		<div align="left"><a href="/main/" class="STYLE1">Return</a> </div>
+</div>
+
+<hr />
+</body>
+</html>

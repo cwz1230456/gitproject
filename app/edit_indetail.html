@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" />
+		<title>edit invoice Detail</title>
+	</head>
+<body>
+	<div id="logo"><a href="/"><img src="{% static 'logo.png' %}" alt="logo" /></a>&nbsp;|&nbsp;&nbsp;Edit Detail </div>
+		<form method="post" onSubmit="alert('successul')">
+		
+			<input name="id" type="hidden" value="{{p.id }}">
+			
+			<table id="personform">
+				<tr>
+					<th></th><th>detail</th>
+				</tr>
+				<tr>
+					<td>production</td><td><input name="production" type="text" value="{{ p.production }}" class="text"></td>
+				</tr>
+				<tr>
+					<td>number</td><td><input name="number" type="text" value="{{ p.number }}" class="text"></td>
+				</tr>
+				<tr>
+					<td>univalent</td><td><input name="Univalent" type="text" value="{{ p.Univalent }}" class="text"></td>
+				</tr>
+				<tr>
+					<td>total</td><td><input name="total" type="text" value="{{ p.total }}" class="text"></td>
+				</tr>
+				<tr>
+					<td colspan = 2 align="center"><input type="submit" value="save" class="button"><input type="reset" value="reset" class="button"></td>
+				</tr>
+			</table>
+		</form>
+	<div id="singlebutton">
+		<a href="/invoice/">Return</a>
+	</div>
+</body>
+</html>

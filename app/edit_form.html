@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" />
+		<title>edit invoice</title>
+	</head>
+<body>
+	<div id="logo"><a href="/"><img src="{% static 'logo.png' %}" alt="logo" /></a>&nbsp;|&nbsp;&nbsp;Edit</div>
+		<form method="post" onSubmit="alert('successul')">
+		
+			<input name="id" type="hidden" value="{{ p.id }}">
+			
+			<table id="personform">
+				<tr>
+					<th></th><th>detail</th>
+				</tr>
+				<tr>
+					<td>year</td><td><input name="year" type="text" value="{{ p.year }}" class="text"></td>
+				</tr>
+				
+				<tr>
+					<td colspan = 2 align="center"><input type="submit" value="save" class="button"><input type="reset" value="reset" class="button"></td>
+				</tr>
+			</table>
+		</form>
+	<div id="singlebutton">
+		<a href="/form/">Return</a>
+	</div>
+</body>
+</html>
+

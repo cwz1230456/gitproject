@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+<!--
+.STYLE1 {
+	color: #6495ED;
+	font-size: 36px;
+}
+-->
+</style>
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" />
+	<title>register</title>
+	{% if success %}
+	<meta http-equiv = "refresh" content="1;url=/">
+	{% endif %}
+</head>
+<body>
+  <div id="logo"><a href="/"><img src="{% static 'logo.png' %}" alt="logo" width="73" height="60" /></a><span class="STYLE1">Register</span></div>
+  <hr />
+  <form action="" method="post">
+  {% csrf_token %}
+  
+  <div class="regform">
+  <table width="1260" border = 0>
+    <tr>
+	<td><div align="right">username:</div></td>
+    <td>
+      <div align="left">
+        <input type="text" name="username" value="" id="username">
+        </div></td></tr>
+	<tr>
+    <td><div align="right">password:</div></td>
+    <td>
+      <div align="left">
+        <input type="password" name="password1" value="" id="password1">
+        </div></td></tr>
+	<tr>
+    <td><div align="right">password_again:</div></td>
+    <td>
+      <div align="left">
+        <input type="password" name="password2" value="" id="password2">
+        </div></td></tr>
+	<tr>
+    <td><div align="right">E-mail:</div></td>
+    <td>
+      <div align="left">
+        <input type="text" name="email" value="" id="email">
+        </div></td></tr>
+	  {% if success %}
+	  <tr>
+	    <td colspan=3 class="msg">success!please wait... </td>
+	  </tr>
+	  {% endif %}
+	  {% if empty %}
+	  <tr>
+	    <td height="19" colspan=3 class="msg">please finish all the form </td>
+	  </tr>
+	  {% endif %}
+	  {% if invalidname %}
+	  <tr>
+	    <td colspan=3 class="msg">the username has existed,plaese try another username </td>
+	  </tr>
+	  {% endif %}
+	  {% if invalidpass %}
+	  <tr>
+	    <td colspan=3 class="msg">the first password is different from the second password </td>
+	  </tr>
+	  {% endif %}
+	<tr><td colspan=3 class="control"><input name="submit" type="submit" value="register" />
+	  <input type="reset" value="reset" />
+	</td>
+	</tr>
+  </table>
+  <div align="center"></div>
+  <div align="left"></div>
+  </div>
+  </form>
+  
+ <div id="userurls">
+ <a href="/login/">return to login </a>
+ <a href="/main/">homepage </a> </div>
+ 	<hr />
+</body>
+</html>

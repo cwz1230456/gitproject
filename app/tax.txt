@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" />
+	<title>Financial management system</title>
+{% load staticfiles %}
+</head>
+<body>
+<!-- header begin -->
+<div id="logo">
+  <div align="center"><img src="static/django.gif"" alt="logo" width="117" height="41"logo.png" %} /></div>
+</div>
+<hr />
+<!-- header end -->
+<!-- sidebar begin -->
+<div id="sidebar">
+	<div class="widget">
+	<form action="/search/" method="post">
+		<div class="title">Tax Stimulate</div>
+		<input class="text" type="text" name="word" value="" onFocus="if(value=='') {value=''}" onBlur="if(value=='') {value=''}">
+	  <div class="reminder"></div>
+	  <input name="submit" type="submit" class="submit" value="Stimulate">
+	</form>
+	</div>
+	<table id="peoplelist">
+	<tr>
+		<th><div align="center">result</div></th>
+	  </tr>
+		    <td>{{name}}</td>
+		</tr>
+</table>
+</div>
+<div id="singlebutton">
+		<div align="left"><a href="/" class="STYLE1">Return</a> </div>
+</div>
+<!-- sidebar end -->
+</body>
+</html>

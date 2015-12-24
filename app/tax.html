@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="static/styles.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.STYLE1 {font-size: 18px}
+.STYLE2 {font-size: 18px; color: #00CCFF; }
+.STYLE3 {font-size: 18px; color: #66CCFF; }
+-->
+</style>
+<style>
+ul
+{
+list-style-type:none;
+margin:0;
+padding:0;
+}
+li
+{
+display:inline;
+}
+.STYLE4 {font-size: 24px}
+</style>
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" />
+	<title>Financial management system</title>
+{% load staticfiles %}
+</head>
+<body>
+<!-- header begin -->
+<div id="logo">
+  <div align="center"><img src="{% static 'logo.png' %}"" alt="logo "width="73" height="60"django.gif" %} />Tax</div>
+</div>
+<ul>
+<li><a href="/invoicesearch/" class="STYLE4" style="color:#009999">invoice</a></li>
+<li><a href="/formsearch/" class="STYLE4" style="color:#009999">form</a></li>
+<li><a href="/tax/" class="STYLE4" style="color:#009999">tax</a></li>
+
+</ul>
+<hr />
+<p>
+  <!-- header end -->
+  <!-- sidebar begin -->
+  <body>
+</p>
+<p>&nbsp;</p>
+<form method="post" onSubmit="alert('successful')">
+		
+			<table id="personform">
+				<tr>
+					<th></th><th>Data</th>
+				</tr>
+				<tr>
+					<td>costing</td><td><input name="costing" type="text" class="text"></td>
+				</tr>
+				<tr class="alt">
+				<tr>
+					<td>selling</td><td><input name="selling" type="text" class="text"></td>
+				</tr>
+				<tr class="alt">
+				<tr>
+					<td colspan = 2 align="center"><input type="submit" value="conculate" class="button"><input type="reset" value="reset" class="button"></td>
+				</tr>
+			</table>
+</form>
+
+<div id="singlebutton"> 
+	
+  <div align="left">
+    <p align="center" class="STYLE3">Lawfully pay taxes is the obligation that every citizen should use up.</p>
+    <p align="center" class="STYLE2">&nbsp; </p>
+    <p><a href="/main/" class="STYLE1">Return</a> </p>
+  </div>
+  
+</div>
+<!-- sidebar end -->
+</body>
+<hr />
+</html>

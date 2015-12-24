@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="static/styles.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.STYLE1 {font-weight: bold}
+-->
+</style>
+<style>
+ul
+{
+list-style-type:none;
+margin:0;
+padding:0;
+}
+li
+{
+display:inline;
+}
+.STYLE4 {
+	color: #6495ED;
+	font-weight: bold;
+}
+.STYLE5 {font-size: 24px}
+</style>
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" />
+	<title>Financial management system</title>
+{% load staticfiles %}
+</head>
+<body>
+<!-- header begin -->
+<div id="logo">
+  <div align="center"><img src="{% static 'logo.png' %}"" alt="logo "width="73" height="60"django.gif" %} />Salary</div>
+</div>
+<ul>
+<li><a href="/invoicesearch/" class="STYLE5" style="color:#009999">invoice</a></li>
+<li><a href="/formsearch/" class="STYLE5" style="color:#009999">form</a></li>
+<li><a href="/tax/" class="STYLE5" style="color:#009999">tax</a></li>
+
+<span class="STYLE5"></span>
+</ul>
+	
+	
+
+	<hr />
+
+<!-- header end -->
+	<div class="widget">
+	<form action="/salaryresult/" method="post">
+		<div class="title">
+		  <div align="center" class="STYLE4">Search for Detail</div>
+		</div>
+		<div align="center">
+		  <p>
+		    <input class="text" type="text" name="year" value="input year" onFocus="if(value=='input year') {value=''}" onBlur="if(value=='') {value='input year'}">
+		    <input class="text" type="text" name="name" value="input name" onFocus="if(value=='input name') {value=''}" onBlur="if(value=='') {value='input name'}">
+		    <input class="text" type="text" name="beginmonth" value="input begining month" onFocus="if(value=='input begining month') {value=''}" onBlur="if(value=='') {value='input begining month'}">
+		    <input class="text" type="text" name="endmonth" value="input ending month" onFocus="if(value=='input ending month') {value=''}" onBlur="if(value=='') {value='input ending month'}">
+	      </p>
+		  <p>&nbsp;  </p>
+	  </div>
+		<div class="reminder"></div>
+	    <div align="center">
+	      <input name="submit" type="submit" class="submit" value="search">
+          </div>
+	</form>
+
+	</div>
+
+<div id="content">
+
+
+	<div id="singlebutton">
+		<div align="left"><a href="/add/" class="STYLE1">Add</a> </div>
+</div>
+
+<div id="singlebutton">
+		<div align="left"><a href="/main/" class="STYLE1">Return</a> </div>
+</div>
+</div>
+<hr />
+</body>
+</html>

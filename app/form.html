@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="static/styles.css" rel="stylesheet" type="text/css">
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" />
+	<title>Financial management system</title> 
+{% load staticfiles %}
+</head>
+<body>
+<!-- header begin -->
+<div id="logo">
+  <div align="center"><img src="{% static 'logo.png' %}"" alt="logo "width="73" height="60"django.gif" %} />Form</div>
+</div>
+<hr />
+<!-- header end -->
+<p>&nbsp;</p>
+<div id="content">
+
+  <table id="peoplelist">
+  {% for form in form_list %}
+	  <td colspan=6>{{form.year}}</td>
+	    <th colspan=3>OPERATION</th>
+	
+	<tr>
+		<th>year income</th>
+		<th>year cost</th>
+		<th>selling expenses</th>
+		<th>management expenses</th>
+		<th>financial expenses</th>
+		<th>investment income</th>
+		<td><a href="/edit_form/?id={{form.id}}">Edit</a></td>
+		<td><a href="/zoom_form/?id={{form.id}}">Zoom</a></td>
+		<td><a href="/print_form/?id={{form.id}}">Print</a></td>	
+		
+	
+	</tr>
+
+		{% for formdetail in formdetail_list %}
+		    <td>{{formdetail.yearincome }}</td>
+		    <td>{{formdetail.yearcost}}</td>
+		    <td>{{formdetail.sellingexpenses }}</td>
+		    <td>{{formdetail.managementexpenses }}</td>
+			<td>{{formdetail.financialexpenses }}</td>
+			<td>{{formdetail.incomefrominvestment }}</td>
+			<td><a href="/edit_formdetail/?id={{formdetail.id}}">Edit</a></td>
+			<td><a href="/deleteformdetail/?id={{formdetail.id}}">Delete</a></td>
+	</tr>
+		{% endfor %}
+	<!--{% for people in people_list %}
+	<tr {% if forloop.counter|divisibleby:"2" %} class="alt" {% endif %}>-->
+	<!--{% endfor %}-->	
+	<tr>
+		<td colspan=6><a href="/add_formdetail/?id={{form.id}}">Add form detail</a></td>
+	</tr>
+	
+	 
+	
+	{% endfor %}
+</table>
+<p>&nbsp;</p>
+</div>
+
+<div id="singlebutton">
+		<div align="left"><a href="/formsearch/" class="STYLE1">Return</a> </div>
+</div>
+<hr />
+</body>
+</html>

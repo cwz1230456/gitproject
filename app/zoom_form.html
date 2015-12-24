@@ -1,0 +1,59 @@
+<html lang="en"><head>
+<link href="static/styles.css" rel="stylesheet" type="text/css">
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" />
+	<title>Financial management system</title>
+{% load staticfiles %}
+  <link rel="stylesheet" href="//apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
+  <script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="jqueryui/style.css">
+  <style>
+  #resizable { width: 700px; height: 130px; padding: 0.5em; }
+  #resizable h3 { text-align: center; margin: 0; }
+  </style>
+  <script>
+  $(function() {
+    $( "#resizable" ).resizable();
+  });
+  </script>
+</head>
+<body>
+ 
+<div id="resizable" class="ui-widget-content">
+  <h3 class="ui-widget-header">
+  <table id="peoplelist">
+  {% for form in form_list %}
+	  <td colspan=6>{{form.year}}</td>
+	 
+	<tr>
+		<th>year income</th>
+		<th>year cost</th>
+		<th>selling expenses</th>
+		<th>management expenses</th>
+		<th>financial expenses</th>
+		<th>investment income</th>
+	</tr>
+
+		{% for formdetail in formdetail_list %}
+		    <td>{{formdetail.yearincome }}</td>
+		    <td>{{formdetail.yearcost}}</td>
+		    <td>{{formdetail.sellingexpenses }}</td>
+		    <td>{{formdetail.managementexpenses }}</td>
+			<td>{{formdetail.financialexpenses }}</td>
+			<td>{{formdetail.incomefrominvestment }}</td>
+	</tr>
+		{% endfor %}
+	<!--{% for people in people_list %}
+	<tr {% if forloop.counter|divisibleby:"2" %} class="alt" {% endif %}>-->
+	<!--{% endfor %}-->		
+	{% endfor %}
+</table>
+  </h3>
+</div>
+ <div id="singlebutton">
+		<a href="/form/">return</a>
+	</div>
+ 
+</body>
+</html>			

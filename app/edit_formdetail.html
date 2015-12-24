@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" />
+		<title>edit invoice Detail</title>
+	</head>
+<body>
+	<div id="logo"><a href="/"><img src="{% static 'logo.png' %}" alt="logo" /></a>&nbsp;|&nbsp;&nbsp;Edit Detail </div>
+		<form method="post" onSubmit="alert('successul')">
+		
+			<input name="id" type="hidden" value="{{p.id }}">
+			
+			<table id="personform">
+				<tr>
+					<th></th><th>detail</th>
+				</tr>
+				<tr>
+					<td>year income</td><td><input name="yearincome" type="text" value="{{ p.yearincome }}" class="text"></td>
+				</tr>
+				<tr>
+					<td>year cost</td><td><input name="yearcost" type="text" value="{{ p.yearcost }}" class="text"></td>
+				</tr>
+				<tr>
+					<td>selling expenses</td><td><input name="sellingexpenses" type="text" value="{{ p.sellingexpenses }}" class="text"></td>
+				</tr>
+				<tr>
+					<td>management expenses</td><td><input name="managementexpenses" type="text" value="{{ p.managementexpenses }}" class="text"></td>
+				</tr>
+				<tr>
+					<td>financial expenses</td><td><input name="financialexpenses" type="text" value="{{ p.financialexpenses }}" class="text"></td>
+				</tr>
+				<tr>
+					<td>income from investment</td><td><input name="incomefrominvestment" type="text" value="{{ p.incomefrominvestment }}" class="text"></td>
+				</tr>
+				<tr>
+					<td colspan = 2 align="center"><input type="submit" value="save" class="button"><input type="reset" value="reset" class="button"></td>
+				</tr>
+			</table>
+		</form>
+	<div id="singlebutton">
+		<a href="/form/">Return</a>
+	</div>
+</body>
+</html>

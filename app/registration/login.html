@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+<!--
+.STYLE1 {
+	font-size: 36px;
+	color: #6495ED;
+}
+-->
+</style>
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" />
+<title>Login</title>
+</head>
+<body>
+  <div id="logo">
+    <p><a href="/"><img src="{% static 'logo.png' %}" alt="logo" width="73" height="60" /></a><span class="STYLE1">Log in</span> </p>
+  </div>
+  <hr />
+  <form action="" method="post">
+    <p>{% csrf_token %}    </p>
+    <p>&nbsp;</p>
+    <table border = 0 id="loginform">
+    <tr>
+	<td>username:</td>
+    <td><input type="text" name="username" value="" id="username"></td>
+	</tr>
+	<tr>
+    <td>password:</td>
+    <td><input type="password" name="password" value="" id="password"></td>
+	</tr>
+	<!--{% if form.errors %}
+    <tr>
+      <td class="msg" colspan=2>username or password error </td>
+    </tr>
+	{% endif %}-->
+	<tr><td colspan=2 class="control">
+    <input type="submit" value="login" //>
+	<input type="reset" value="reset" />
+    <input type="hidden" name="next" value="/main/" /></td>
+	</tr>
+  </table>
+</form>
+  <div id="singlebutton">
+  <a href="/register/">register </a>
+  <a href="/">return</a>
+  </div>
+  <hr />
+</body>
+</html>

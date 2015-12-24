@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="static/styles.css" rel="stylesheet" type="text/css">
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" />
+	<title>Financial management system</title> 
+{% load staticfiles %}
+</head>
+<body>
+<!-- header begin -->
+<div id="logo">
+  <div align="center"><img src="{% static 'logo.png' %}"" alt="logo "width="73" height="60"django.gif" %} />Invoice</div>
+</div>
+<hr />
+<!-- header end -->
+<p>&nbsp;</p>
+<div id="content">
+
+  <table id="peoplelist">
+  {% for invoice in invoice_list %}
+	<td colspan=4>{{invoice.title}}</td>
+	<th colspan=3>OPERATION</th>
+	
+	<tr>
+		<th>Name of production </th>
+		<th>number</th>
+		<th>Univalent</th>
+		<th>Total</th>
+		<td><a href="/edit_invoice/?id={{invoice.id}}">Edit</a></td>
+		<td><a href="/zoom_invoice/?id={{invoice.id}}">Zoom</a></td>
+		<td><a href="/print_invoice/?id={{invoice.id}}">Print</a></td>	
+		
+	
+	</tr>
+
+		{% for detail in detail_list %}
+		    <td>{{ detail.production }}</td>
+		      <td>{{detail.number }}</td>
+		      <td>{{detail.Univalent }}</td>
+		    <td>{{detail.total }}</td>
+			<td><a href="/edit_indetail/?id={{detail.id}}">Edit</a></td>
+			<td><a href="/deleteindetail/?id={{detail.id}}">Delete</a></td>
+	</tr>
+		{% endfor %}
+	<!--{% for people in people_list %}
+	<tr {% if forloop.counter|divisibleby:"2" %} class="alt" {% endif %}>-->
+	<!--{% endfor %}-->	
+	<tr>
+		<td colspan=4><a href="/add_indetail/?id={{invoice.id}}">Add invoice detail</a></td>
+	</tr>
+	  <td colspan=2>{{ invoice.drawer }}</td>
+      <td colspan=2>{{ invoice.date }}</td>
+	 
+	
+	{% endfor %}
+</table>
+<p>&nbsp;</p>
+</div>
+
+<div id="singlebutton">
+		<div align="left"><a href="/invoicesearch/" class="STYLE1">Return</a> </div>
+</div>
+<hr />
+</body>
+</html>

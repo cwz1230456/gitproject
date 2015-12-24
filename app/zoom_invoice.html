@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+<link href="static/styles.css" rel="stylesheet" type="text/css">
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" />
+	<title>Financial management system</title>
+{% load staticfiles %}
+  <link rel="stylesheet" href="//apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
+  <script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="jqueryui/style.css">
+  <style>
+  #resizable { width: 500px; height: 200px; padding: 0.5em; }
+  #resizable h3 { text-align: center; margin: 0; }
+  </style>
+  <script>
+  $(function() {
+    $( "#resizable" ).resizable();
+  });
+  </script>
+</head>
+<body>
+ 
+<div id="resizable" class="ui-widget-content">
+  <h3 class="ui-widget-header">
+  <table id="peoplelist">
+  {% for invoice in invoice_list %}
+	<td colspan=4>{{invoice.title}}</td>	
+	<tr>
+		<th>Name of production </th>
+		<th>number</th>
+		<th>Univalent</th>
+		<th>Total</th>	
+	  </tr>
+
+		{% for detail in detail_list %}
+		    <td>{{ detail.production }}</td>
+		      <td>{{detail.number }}</td>
+		      <td>{{detail.Univalent }}</td>
+		    <td>{{detail.total }}</td>
+	</tr>
+		{% endfor %}
+	<!--{% for people in people_list %}
+	<tr {% if forloop.counter|divisibleby:"2" %} class="alt" {% endif %}>-->
+	<!--{% endfor %}-->	
+	  <td colspan=2>{{ invoice.drawer }}</td>
+      <td colspan=2>{{ invoice.date }}</td>
+	 
+	
+	{% endfor %}
+</table>
+  </h3>
+</div>
+ <div id="singlebutton">
+		<a href="/form/">return</a>
+	</div>
+ 
+</body>
+</html>			

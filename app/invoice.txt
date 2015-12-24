@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="static/styles.css" rel="stylesheet" type="text/css">
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" />
+	<title>Financial management system</title>
+{% load staticfiles %}
+</head>
+<body>
+<!-- header begin -->
+<div id="logo">
+  <div align="center"><img src="static/django.gif"" alt="logo" width="117" height="41"logo.png" %} /></div>
+</div>
+<hr />
+<!-- header end -->
+
+<div id="content">
+
+<table id="peoplelist">
+	<tr>
+		<th><div align="center">ID</div></th>
+		<th>Name of product </th>
+		<th>number</th>
+		<th>Univalent</th>
+		<th>Total</th>
+		<th>payee</th>
+		<th>drawer</th>
+		<th colspan=3>oparation</th>
+	</tr>
+	{% for people in people_list %}
+	<tr {% if forloop.counter|divisibleby:"2" %} class="alt" {% endif %}>
+		<td>{{ forloop.counter }}</td>
+		<td>{{ people.name }}</td>
+		<td>{% if people.sex %}  {% else %}  {% endif %}</td>
+		<td>{{ people.number }}</td>
+		<td>{{ people.phone }}</td>
+		<td>{{ people.email }}</td>
+		<td>{{ people.qq }}</td>
+		<td><a href="/delete/?id={{people.id}}">Edit</a></td>
+		<td><a href="/update/?id={{people.id}}">Zoom</a></td>
+		<td><a href="/update/?id={{people.id}}">Print</a></td>
+	</tr>
+	{% endfor %}
+	
+</table>
+<div id="singlebutton">
+		<div align="left"><a href="/" class="STYLE1">Return</a> </div>
+</div>
+</div>
+</body>
+</html>

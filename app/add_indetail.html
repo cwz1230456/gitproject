@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>add invoice detail</title>
+		{% load staticfiles %}
+		<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" />
+	</head>
+
+<body>
+	<div id="logo"><img src="{% static 'logo.png' %}" alt="logo" /></a>&nbsp;|&nbsp;&nbsp;add invoice detail </div>
+		<form method="post" onSubmit="alert('successful')">
+	<hr />
+			<table id="personform">
+				<tr>
+					<th>&nbsp;</th>
+					<th>detail</th>
+				</tr>
+				<tr>
+					<td>name of production</td>
+					<td><input name="production" type="text" class="text"></td>
+				</tr>
+				<tr>
+					<td>number</td>
+					<td><input name="number" type="text" class="text"></td>
+				</tr>
+					<td>Univalent</td>
+					<td><input name="Univalent" type="text" class="text"></td>
+				</tr>
+				<tr>
+					<td>total</td>
+					<td><input name="total" type="text" class="text"></td>
+				</tr>
+					<td colspan = 2 align="center"><input type="submit" value="save" class="button"><input type="reset" value="reset" class="button"></td>
+				</tr>
+			</table>
+		</form>
+	<div id="singlebutton">
+		<a href="/invoice/">return</a>
+	</div>
+	<hr />
+</body>
+</html>
